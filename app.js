@@ -22,13 +22,14 @@ app.get('/', (req, res) => {
   res.render('lectures', { title: 'Forsíða' });
 });
 
-
+/* Villumelding ef 404 villa finnst */
 function notFoundHandler(req, res, next) { /* eslint-disable-line */
   const title = 'Fannst ekki';
   const message = 'Ó nei, efnið finnst ekki!';
   res.status(404).render('error', { title, message });
 }
 
+/* Villumelding ef 500 villa finnst */
 function errorHandler(err, req, res, next) { /* eslint-disable-line */
   console.error(err);
   const title = 'Villa kom upp';

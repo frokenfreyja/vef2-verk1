@@ -102,6 +102,7 @@ function image(data, caption) {
   return item('image', blockquote);
 }
 
+/* Módúll sem tekur við fylki af dóti og skilar HTML streng */
 module.exports = function createContent(content) {
   const wrapper = el('div');
 
