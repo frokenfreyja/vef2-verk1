@@ -1,16 +1,18 @@
 {
-  "name": "v1-synilausn",
+  "name": "vef2-verk1",
   "version": "1.0.0",
   "description": "v10",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint *.js **/*.js"
+    "eslint": "eslint *.js \"**/*.js\"",
+    "start": "node app.js",
+    "test": "npm run eslint"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^5.12.0",
+    "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "nodemon": "^1.18.9"
@@ -18,6 +20,10 @@
   "dependencies": {
     "browser-sync": "^2.26.3",
     "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "jsdom": "^13.1.0",
+    "sass": "^1.16.1",
+    "start": "^5.1.0",
     "stylelint": "^9.10.1"
   }
 }

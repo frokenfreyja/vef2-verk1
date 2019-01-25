@@ -1,0 +1,34 @@
+<%- include('header') -%>
+
+<header class="heading heading--main"> 
+    <span class="heading__category"><%= category %></span>
+    <h1 class="heading__title"><%= title %></h1>
+  </header>
+  
+<ul class="filters">
+    <li><button data-category="html" class="filters__filter filters__filter--html">HTML</button></li>
+    <li><button data-category="css" class="filters__filter filters__filter--css">CSS</button></li>
+    <li><button data-category="javascript" class="filters__filter filters__filter--js">JavaScript</button></li>
+  </ul>
+
+  <div class="list">
+    <div class="list__row">
+      <% lectures.forEach((lecture) => { %>
+        <div class="list__col">
+          <a href="<%= lecture.slug %>" class="listItem">
+            <div class="listItem__image">
+                <img src="<%= lecture.thumbnail %>" alt="">
+            </div>
+            <div class="listItem__bottom">
+              <div class="listItem__texts">
+                <span class="listItem__category"><% lecture.category %></span>
+                <h2 class="listItem__title"><%= lecture.title %></h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+<%- include('footer') -%>
