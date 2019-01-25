@@ -11,12 +11,20 @@ function catchErrors(fn) {
   return (req, res, next) => fn(req, res, next).catch(next);
 }
 
+/**
+ * Les upp alla fyrirlestra sem hafa endingu .json
+ */
 async function readList() {
   const data = await readFile('./lectures.json');
   const json = JSON.parse(data);
   return json;
 }
 
+/**
+ * Sækir upplýsingar um alla fyrirlestra
+ * @param {object} req - request
+ * @param {object} res - response
+ */
 async function list(req, res) {
   const title = 'Fyrirlestrar';
   const category = 'Vefforritun';
@@ -26,6 +34,14 @@ async function list(req, res) {
   res.render('lectures', { title, category, lectures });
 }
 
+/**
+ * Skrifar út stakan fyrirlestur eftir `slug` param úr route. Ef fyrirlestur finnst ekki
+ * er kallað í next()
+ *
+ * @param {object} req
+ * @param {object} res
+ * @param {function} next
+ */
 async function lecture(req, res, next) {
   /* todo útfæra */
   const { slug } = req.params;
